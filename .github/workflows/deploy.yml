@@ -9,6 +9,7 @@ env:
   MONGODB_DB_NAME: gha-demo      
 jobs:
   test:
+    environment: testing
     env:
       MONGODB_CLUSTER_ADDRESS: cluster0.dbvp9y8.mongodb.net
       # MONGODB_USERNAME: sritiman
@@ -17,7 +18,7 @@ jobs:
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
 
       PORT: 3000
-    environment: testing
+    
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
